@@ -1,0 +1,12 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-image: url("/src/img/default.jpg");
+    background-size: cover;  /* Cubrir toda la pantalla */
+    background-position: center; /* Centra */
+    background-repeat: no-repeat; /* Evita repeticiones */
+    background-attachment: fixed; /* Fija el fondo al hacer scroll */
+}

@@ -1,0 +1,52 @@
+.containerCard{
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.692);
+    border-radius: 0.4rem;
+    padding: 0.4rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.actionCard{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.actionCard button:hover{
+    cursor: pointer;
+}
+
+.botonEliminar {
+    background-color: red;
+    color: white;
+    border: 2px solid black;
+    padding: 8px 12px;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+.botonEliminar:hover {
+    background-color: darkred;
+}
+
+.botonEditar {
+    background-color: yellow;
+    color: black;
+    border: 2px solid black;
+    padding: 8px 12px;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+.botonEditar:hover {
+    background-color: gold;
+}
+
+.imagenTarea {
+    width: 100px;  /* ancho */
+    height: 100px; /* altura  */
+    object-fit: cover; /* mantener forma sin deformarse */
+    border-radius: 8px;
+}
