@@ -1,0 +1,66 @@
+# 1)
+#!/bin/bash
+echo "como te llamas?"
+read nombre
+echo "Hola $nombre"
+
+# 2)
+#!/bin/bash
+echo "ingrese un numero"
+read numero
+if  [ $((numero % 2)) -eq 0 ]; then
+echo "el numero es par"
+else
+echo "el numero es impar"
+fi
+
+# 3)
+#!/bin/bash
+echo "ingrese el primer numero"
+read numero1
+echo "ingrese el segundo numero"
+read numero2
+if [ "$numero1" -gt "$numero2" ]; then
+echo "$numero1 es mayor que $numero2"
+elif [ "$numero1" -lt "$numero2" ]; then
+echo "$numero2 es mayor que $numero1"
+else
+echo "ambos son iguales"
+fi
+
+# 4)
+#!/bin/bash
+for i in {1..10}; do 
+echo "$i"
+done
+
+# 5)
+#!/bin/bash
+echo "MENU"
+echo "1) mostrar fecha"
+echo "2) mostrar usuarios"
+echo "3) salir"
+while true 
+do
+    read opcion
+    case $opcion in
+      1)
+        echo "la fecha es:"
+        date
+        echo ""
+        ;;
+      2)
+        echo "lista de usuarios:"
+        who
+        echo ""
+        ;;
+      3)
+        echo "adios"
+        break
+        ;;
+      *)
+        echo "opcion incorrecta"
+        echo ""
+        ;;
+    esac
+done
