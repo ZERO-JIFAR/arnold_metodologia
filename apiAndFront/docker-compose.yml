@@ -1,0 +1,48 @@
+version: "3.8"
+
+services:
+# db
+  mongo:
+    image: mongo
+    container_name: mongo
+    ports:
+      # puerto docker puerto pc host
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db # volumen persistente de mongo
+    networks:
+      - mern-data
+
+# backend
+  backend:
+    build: ./api
+    ports:
+      # puerto docker puerto pc host
+      - "3001:3001"
+    depends_on:
+      - mongo
+    environment:
+      - MONGO_URI=mongodb://mongo:27017/usuariosdb # URI de conexión a MongoDB
+    networks:
+      - mern-data
+
+# frontend
+  frontend:
+    build: ./front-prueba
+    container_name: frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+    environment:
+      - VITE_APP_URL=http://api:3001
+    networks:
+      - mern-data
+
+networks:
+  mern-data:
+    driver: bridge
+
+volumes:
+  mongo-data:
+    driver: local
